@@ -5,8 +5,8 @@ const getalltasks = async () => {
   return tasks
 }
 
-const createTask = async (title) => {
-  const newTask = await Task.create({ title })
+const createTask = async (title,owner) => {
+  const newTask = await Task.create({ title,owner })
   return newTask
 }
 

@@ -8,7 +8,7 @@ const getTasks = async (req, res) => {
 
 const addTask = async (req, res) => {
   const { title } = req.body
-  const newTask = await createTask(title)
+  const newTask = await createTask(title,req.user._id)
   sendSuccess(res, 201, "Task created successfully", newTask)
 }
 

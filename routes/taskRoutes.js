@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get("/", asyncHandler(protect), asyncHandler(getTasks));
 
-router.post("/",createTaskValidation,validate,asyncHandler(addTask));
+router.post("/",createTaskValidation,validate,asyncHandler(protect),asyncHandler(addTask));
 
 router.get("/:id",asyncHandler(protect), asyncHandler(getTask));
 
