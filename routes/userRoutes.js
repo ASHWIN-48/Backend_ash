@@ -39,8 +39,39 @@ const authLimiter = rateLimit({
  *       401:
  *         description: Invalid credentials
  */
-router.post("/register", authLimiter, registerValidation, validate, asyncHandler(register))
 router.post("/login", authLimiter, loginValidation, validate, asyncHandler(login))
+
+/**
+ * @swagger
+ * /users/register:
+ *   post:
+ *     summary: Register a new user
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [name, email, password]
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: Ash
+ *               email:
+ *                 type: string
+ *                 example: ash@test.com
+ *               password:
+ *                 type: string
+ *                 example: correctpassword
+ *     responses:
+ *       201:
+ *         description: User registered successfully, returns user and tokens
+ *       400:
+ *         description: Validation error or duplicate email
+ */
+router.post("/register", authLimiter, registerValidation, validate, asyncHandler(register))
+
 router.post("/refresh", asyncHandler(refreshToken))
 
 export default router
