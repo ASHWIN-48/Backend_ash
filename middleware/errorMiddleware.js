@@ -7,9 +7,11 @@
 // export default errorMiddleware
 
 import { sendError } from "../utils/responseHandler.js"
+import logger from "../utils/logger.js"
 
 const errorMiddleware = (err, req, res, next) => {
-  console.error(err.stack)
+  logger.error(err.message, { path: req.originalUrl, method: req.method, status: err.status || 500 })
+  
 
   // Mongoose CastError — invalid ID format
   if (err.name === "CastError") {

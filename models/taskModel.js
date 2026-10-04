@@ -25,7 +25,7 @@ const taskSchema = new mongoose.Schema(
 )
 
 
-
+taskSchema.index({ owner: 1, completed: 1 })
 const Task = mongoose.model("Task", taskSchema)
 
 export default Task

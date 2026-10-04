@@ -33,17 +33,16 @@ const userSchema = new mongoose.Schema(
   }
 )
 
-userSchema.pre("save", async function (next) {
+userSchema.pre("save", async function () {
 
   if (this.isModified("password")) {
     const salt = await bcrypt.genSalt(10)          // random salt banaya
     const hashedPassword = await bcrypt.hash(this.password, salt)   // password + salt ko hash kiya
     this.password = hashedPassword                  // plaintext ko hash se replace kiya
   }
-  next()
 })
 
-
+// userSchema.index({ email: 1 }) not needed unique doing same work
 
 const User = mongoose.model("User", userSchema)
 
