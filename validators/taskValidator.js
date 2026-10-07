@@ -1,4 +1,5 @@
 import{body,param} from "express-validator";
+import mongoose from "mongoose"
 
 export const createTaskValidation = [
   body("title")
@@ -19,8 +20,7 @@ export const createTaskValidation = [
 //         .isNumeric()
 //         .withMessage("Task ID must be a number")
 // ];
-// import { body, param } from "express-validator"
-// import mongoose from "mongoose"
+
 
 export const taskIdValidation = [
   param("id")

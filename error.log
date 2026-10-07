@@ -3,3 +3,9 @@
 {"level":"error","message":"Invalid credentials","method":"POST","path":"/users/login","status":401}
 {"level":"error","message":"Invalid credentials","method":"POST","path":"/users/login","status":401}
 {"level":"error","message":"Invalid credentials","method":"POST","path":"/users/login","status":401}
+{"level":"error","message":"jwt expired","method":"GET","path":"/tasks?page=1&limit=10&completed=true","status":500}
+{"level":"error","message":"Task not found","method":"DELETE","path":"/tasks/6ac2987b801533c7030dcbc4","status":404}
+{"level":"error","message":"Task not found","method":"DELETE","path":"/tasks/6ac2987b801533c7030dcbc4","status":404}
+{"level":"error","message":"Task not found","method":"PUT","path":"/tasks/6ac298b8801533c7030dcbc5","status":404}
+{"level":"error","message":"E11000 duplicate key error collection: taskdb.users index: email_1 dup key: { email: \"ash@test.com\" }","method":"POST","path":"/users/register","status":500}
+{"level":"error","message":"E11000 duplicate key error collection: taskdb.users index: email_1 dup key: { email: \"ash@test.com\" }","method":"POST","path":"/users/register","status":500}

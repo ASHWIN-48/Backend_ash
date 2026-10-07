@@ -12,6 +12,7 @@ import morgan from "morgan"
 import logger from "./utils/logger.js"
 import swaggerUi from "swagger-ui-express"
 import swaggerSpec from "./config/swagger.js"
+import redisClient from "./config/redisClient.js"
 // ...
 
 
